@@ -1,0 +1,47 @@
+<form [formGroup]="form" (submit)="Add()">
+
+
+    <label for="username">
+        <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+          Username:
+        </h2>
+      </label>
+      <input type="text" id="username" formControlName="username" placeholder="Enter Username">
+      <div *ngIf="formSubmitted && form.get('username')?.errors?.['required']" class="inv">Username required</div>
+    
+      <label for="email">
+        <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+          Email:
+        </h2>
+      </label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter Email">
+      <div *ngIf="formSubmitted && form.get('email')?.errors?.['required']" class="inv">Email required</div>
+      <div *ngIf="formSubmitted && form.get('email')?.errors?.['email']" class="inv">Invalid email format</div>
+    
+      <label for="place">
+        <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+          Place:
+        </h2>
+      </label>
+      <input type="text" id="place" formControlName="place" placeholder="Enter Place">
+      <div *ngIf="formSubmitted && form.get('place')?.errors?.['required']" class="inv">Place required</div>
+    
+     
+     
+    
+      <label for="password">
+        <h2 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+          Password:
+        </h2>
+      </label>
+      <input type="password" id="password" formControlName="password" placeholder="Enter Password">
+      <div *ngIf="formSubmitted && form.get('password')?.errors?.['required']" class="inv">Password required</div>
+    
+      <button type="submit">Submit</button>
+   
+
+
+
+
+
+</form>
