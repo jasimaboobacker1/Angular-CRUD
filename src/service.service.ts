@@ -14,6 +14,10 @@ export class ServiceService {
     return this._http.get(this.userapiurl)
  }
 
+ GetUser(Userid:any){
+  return this._http.get(`${this.userapiurl}/${Userid}`)
+ }
+
  AddUser(User:any){
   return this._http.post(this.userapiurl,User)
  }
